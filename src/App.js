@@ -1,9 +1,10 @@
 import React from "react";
+import { Jumbotron } from "./components";
 
 function App() {
   return (
     <>
-      <p>YEYYY , NETFLIX CLONE</p>
+      <Jumbotron />
     </>
   );
 }
