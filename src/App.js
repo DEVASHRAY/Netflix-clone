@@ -1,18 +1,25 @@
 import React from "react";
-import { Jumbotron } from "./components";
-import { AccordionContainer } from "./containers/accordion";
-import { FooterContainer } from "./containers/footer";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import * as ROUTES from "./constants/routes";
-
-import { JumbotronContainer } from "./containers/jumbotron";
-import JumboData from "./fixtures/jumbo.json";
+import { Browse, Home, Signin, Signup } from "./pages";
 
 function App() {
   return (
     <>
-      <JumbotronContainer />
-      <AccordionContainer />
-      <FooterContainer />
+      <Router>
+        <Route exact path={ROUTES.HOME}>
+          <Home />
+        </Route>
+        <Route exact path={ROUTES.BROWSE}>
+          <Browse />
+        </Route>
+        <Route exact path={ROUTES.SIGN_IN}>
+          <Signin />
+        </Route>
+        <Route exact path={ROUTES.SIGN_UP}>
+          <Signup />
+        </Route>
+      </Router>
     </>
   );
 }
